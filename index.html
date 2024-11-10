@@ -1,96 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narendra's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Landing Section */
+        #landing {
+            background: #1abc9c;
+            color: white;
+            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .landing-content {
+            max-width: 60%;
+        }
+
+        .highlight {
+            color: #3498db;
+            transition: color 0.3s ease;
+        }
+
+        .highlight:hover {
+            color: #ffdb58;
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-left: 20px;
+            border: 5px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        /* Typing Animation */
+	/* Typing Animation */
+.typing {
+    font-size: 1.5em;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid;
+    animation: typing 6s steps(15) infinite, blink .5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    30% { width: 8ch; } /* Stops at "Software" */
+    60% { width: 17ch; } /* Stops at "Software Developer" */
+    100% { width: 0; } /* Rewinds to the start */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+        
+
+        /* Social Icons */
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            color: white;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #ffdb58;
+        }
+
+        /* Section Headings with Icons */
+        .section-header {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .section-header i {
+            color: #3498db;
+        }
+
+        .section-header:hover {
+            color: #3498db;
+        }
+
+        /* Card Styles */
+        .education-card, .project-card {
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .education-card:hover, .project-card:hover {
+            transform: translateY(-10px);
+            background-color: #eaf2f8;
+        }
+
+        /* Skills Icons */
+        .skills-icons a {
+            font-size: 40px;
+            margin: 10px;
+            color: #3498db;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .skills-icons a:hover {
+            transform: scale(1.1);
+            color: #1abc9c;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Landing Section -->
+    <section id="landing">
+        <div class="landing-content">
+            <h1>Hi, I'm <span class="highlight">Narendra</span></h1>
+            <p class="typing">Software Developer</p>
+            <p>I'm passionate about building meaningful projects.</p>
+            <div class="social-icons">
+                <a href="mailto:narisnarendras6@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/narendra-posa-421067254" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Posa5A6" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <img src="download (3).jpg" alt="Narendra's Profile Photo" class="profile-photo">
+    </section>
+
+    <!-- Objective Section -->
+    <section id="objective">
+        <h2 class="section-header"><i class="fas fa-bullseye"></i> Career Objective</h2>
+        <p>I am a driven and ambitious individual seeking a challenging role that pushes me to grow professionally and personally.</p>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics">
+        <h2 class="section-header"><i class="fas fa-graduation-cap"></i> Academics</h2>
+        <div class="education-card">
+            <h3>B.Tech in CSE</h3>
+            <p>Annamacharya Institute of Technology, 8.45 CGPA</p>
+            <p>2021-2025</p>
+        </div>
+        <div class="education-card">
+            <h3>Intermediate (MPC)</h3>
+            <p>J.C.N.R.M JR College, 94.3%</p>
+            <p>2019-2021</p>
+        </div>
+        <div class="education-card">
+            <h3>SSC</h3>
+            <p>S.R.K E.M School, 10 GPA</p>
+            <p>2018-2019</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-header"><i class="fas fa-tasks"></i> Projects</h2>
+        <div class="project-card">
+            <h3>Library Management System</h3>
+            <p>Developed in Java and JDBC, featuring modules to manage book and student records.</p>
+            <a href="https://github.com/Posa5A6" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-header"><i class="fas fa-code"></i> Technical Skills</h2>
+        <div class="skills-icons">
+            <a href="#"><i class="fab fa-java"></i></a>
+            <a href="#"><i class="fab fa-python"></i></a>
+            <a href="#"><i class="fas fa-code"></i></a> <!-- Represents C++ -->
+            <a href="#"><i class="fas fa-database"></i></a> <!-- Represents SQL -->
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-header"><i class="fas fa-certificate"></i> Certificates</h2>
+        <p>Full Stack Web Development, Data Structures in C++, TechMarton Workshop.</p>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section id="contact">
+        <h2 class="section-header"><i class="fas fa-address-book"></i> Contact Details</h2>
+        <p>Email: <a href="mailto:narisnarendras6@gmail.com">narisnarendras6@gmail.com</a></p>
+		<p>Phone :<a href="9014293910">+919014293910</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/narendra-posa-421067254" target="_blank">Narendra Posa</a></p>
+        <p>GitHub: <a href="https://github.com/Posa5A6" target="_blank">Posa5A6</a></p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Declaration: All information is correct to the best of my knowledge.</p>
+        <p>Yours Sincerely, Posa Narendra</p>
+    </footer>
+</body>
 </html>
