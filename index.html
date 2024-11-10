@@ -69,29 +69,25 @@
         }
 
         /* Typing Animation */
-	/* Typing Animation */
-.typing {
-    font-size: 1.5em;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid;
-    animation: typing 6s steps(15) infinite, blink .5s step-end infinite alternate;
-}
+        .typing {
+            font-size: 1.5em;
+            color: #fff;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid;
+            animation: typing 6s steps(15) infinite, blink .5s step-end infinite alternate;
+        }
 
-@keyframes typing {
-    0% { width: 0; }
-    30% { width: 8ch; } /* Stops at "Software" */
-    60% { width: 17ch; } /* Stops at "Software Developer" */
-    100% { width: 0; } /* Rewinds to the start */
-}
+        @keyframes typing {
+            0% { width: 0; }
+            30% { width: 8ch; }
+            60% { width: 17ch; }
+            100% { width: 0; }
+        }
 
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-
-        
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
 
         /* Social Icons */
         .social-icons a {
@@ -164,6 +160,45 @@
         footer:hover {
             background: #34495e;
         }
+
+        /* Contact Form Styles */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact-form button:hover {
+            background-color: #16a085;
+        }
+
+        /* Download CV Button */
+        .download-cv-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .download-cv-button:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -174,11 +209,16 @@
             <h1>Hi, I'm <span class="highlight">Narendra</span></h1>
             <p class="typing">Software Developer</p>
             <p>I'm passionate about building meaningful projects.</p>
-            <div class="social-icons">
-                <a href="mailto:narisnarendras6@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/narendra-posa-421067254" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Posa5A6" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
+           <div class="social-icons">
+    <a href="mailto:narisnarendras6@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/narendra-posa-421067254" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/Posa5A6" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://x.com/NarendraTheKin1?t=Otqix6Kc54fA5CaMo_fVHA&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+
+			<br>
+			<div>
+            <a href="posanarendraa.pdf" download class="download-cv-button">Download CV</a></div>
         </div>
         <img src="download (3).jpg" alt="Narendra's Profile Photo" class="profile-photo">
     </section>
@@ -226,29 +266,42 @@
             <a href="#"><i class="fab fa-java"></i></a>
             <a href="#"><i class="fab fa-python"></i></a>
             <a href="#"><i class="fas fa-code"></i></a> <!-- Represents C++ -->
-            <a href="#"><i class="fas fa-database"></i></a> <!-- Represents SQL -->
+            <a href="#"><i class="fab fa-html5"></i></a>
+            <a href="#"><i class="fab fa-css3-alt"></i></a>
         </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
-        <h2 class="section-header"><i class="fas fa-certificate"></i> Certificates</h2>
-        <p>Full Stack Web Development, Data Structures in C++, TechMarton Workshop.</p>
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2 class="section-header"><i class="fas fa-certificate"></i> Certifications</h2>
+        <div class="education-card">
+            <h3>Certified Java Developer</h3>
+            <p>Issued by Oracle</p>
+        </div>
     </section>
 
-    <!-- Contact Details Section -->
-    <section id="contact">
+    <!-- Contact Section -->
+	 <section id="contact">
         <h2 class="section-header"><i class="fas fa-address-book"></i> Contact Details</h2>
         <p>Email: <a href="mailto:narisnarendras6@gmail.com">narisnarendras6@gmail.com</a></p>
 		<p>Phone :<a href="9014293910">+919014293910</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/narendra-posa-421067254" target="_blank">Narendra Posa</a></p>
         <p>GitHub: <a href="https://github.com/Posa5A6" target="_blank">Posa5A6</a></p>
     </section>
+    <section id="contact">
+        <h2 class="section-header"><i class="fas fa-envelope"></i> Contact Me</h2>
+        <form class="contact-form" action="mailto:narisnarendras6@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>Declaration: All information is correct to the best of my knowledge.</p>
-        <p>Yours Sincerely, Posa Narendra</p>
+        <p>&copy; 2024 Narendra. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
